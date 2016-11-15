@@ -14,16 +14,15 @@ def show_all_users():
 
 
 def show_users_with_books():
-    # TODO: make a function
-    pass
+    view.print_users_with_books(model.users_with_books, model.all_users)
 
 
 def show_users_with_overdue_books():
-    # TODO: make a function
-    pass
+    users_with_overdue_books = model.get_users_with_overdue_books()
+    view.print_users_with_overdue_books(users_with_overdue_books, model.all_users)
 
 
-def show_availiable_books():
+def show_available_books():
     model.available_books.sort(key=int)
     view.print_available_books(model.all_books, model.available_books)
 
@@ -46,7 +45,7 @@ def give_a_book():
     if not model.is_book_available(book_id):
         view.print_book_is_unavailable()
         return
-
+    model.give_book(user_id,book_id)
     view.print_record_was_done()
 
 
@@ -74,7 +73,7 @@ if __name__ == '__main__':
                    '2': show_all_books,
                    '3': show_users_with_books,
                    '4': show_users_with_overdue_books,
-                   '5': show_availiable_books,
+                   '5': show_available_books,
                    '6': give_a_book,
                    '7': receive_a_book,
                    '8': exit_program}

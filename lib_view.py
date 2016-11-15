@@ -59,6 +59,29 @@ def print_all_users(dict_to_print):
                                                    dict_to_print[user_id]['last_name'], ' | '))
 
 
+def print_users_with_books(users_with_books, all_users):
+    list_of_user_id = list(users_with_books.keys())
+    list_of_user_id.sort(key=int)
+    print('\n\rList of users with book:')
+    print('{0:>3}{4}{1:15}{4}{2:15}{4}{3:5}{4}'.format('ID', 'First name', 'Last name', 'Books',
+                                                       ' | '))
+    print('-' * 48)
+    for user_id in list_of_user_id:
+        print(
+            '{0:>3}{4}{1:15}{4}{2:15}{4}{3:^5}{4}'.format(user_id, all_users[user_id]['first_name'],
+                                                         all_users[user_id]['last_name'],
+                                                         len(users_with_books[user_id]), ' | '))
+
+
+def print_users_with_overdue_books(list_of_user_id, all_users):
+    list_of_user_id.sort(key=int)
+    print('\n\rList of all users:')
+    print('{0:>3}{3}{1:15}{3}{2:15}{3}'.format('ID', 'First name', 'Last name', ' | '))
+    print('-' * 41)
+    for user_id in list_of_user_id:
+        print('{0:>3}{3}{1:15}{3}{2:15}{3}'.format(user_id, all_users[user_id]['first_name'],
+                                                   all_users[user_id]['last_name'], ' | '))
+
 def print_press_enter():
     print('\n\rpress Enter to show options')
 
@@ -72,11 +95,11 @@ def print_record_was_done():
 
 
 def input_user_id():
-    return input('Input user ID\n\r:')
+    return input('Input user ID:\n\r')
 
 
 def input_book_id():
-    return input('Input book ID\n\r:')
+    return input('Input book ID:\n\r')
 
 
 def input_option_number():
