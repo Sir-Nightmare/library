@@ -4,52 +4,88 @@ import lib_model as model
 
 
 def show_all_books():
-    view.print_all_books(all_books)
+    list_of_book_id = list(model.all_books.keys())
+    list_of_book_id.sort(key=int)
+    view.print_all_books(model.all_books, list_of_book_id)
 
 
 def show_all_users():
-    view.print_all_users(all_users)
+    view.print_all_users(model.all_users)
 
 
 def show_users_with_books():
+    # TODO: make a function
     pass
 
 
 def show_users_with_overdue_books():
+    # TODO: make a function
     pass
 
 
 def show_availiable_books():
-    pass
+    model.available_books.sort(key=int)
+    view.print_available_books(model.all_books, model.available_books)
 
 
 def give_a_book():
-    pass
+    user_id = view.input_user_id()
+    if not model.is_user_in_list(user_id):
+        view.print_no_such_user()
+        return
+    if model.has_user_enough_books(user_id):
+        view.print_no_more_books(model.NUMBER_OF_BOOKS_FOR_USER)
+        return
+    if model.has_user_overdue_books(user_id):
+        view.print_has_overdue_book()
+        return
+    book_id = view.input_book_id()
+    if not model.is_book_in_library(book_id):
+        view.print_no_such_book()
+        return
+    if not model.is_book_available(book_id):
+        view.print_book_is_unavailable()
+        return
+
+    view.print_record_was_done()
 
 
 def receive_a_book():
+    user_id = view.input_user_id()
+    if not model.is_user_in_list(user_id):
+        view.print_no_such_user()
+        return
+    book_id = view.input_book_id()
+    if not model.is_book_in_library(book_id):
+        view.print_no_such_book()
+        return
+    model.receive_book(user_id, book_id)
+    view.print_record_was_done()
     pass
 
 
-all_users = model.load_data_from_json('all_users.json')
-all_books = model.load_data_from_json('all_books.json')
+def exit_program():
+    model.write_changed_data()
+    sys.exit()
 
-action_dict = {'1': show_all_users,
-               '2': show_all_books,
-               '3': show_users_with_books,
-               '4': show_users_with_overdue_books,
-               '5': show_availiable_books,
-               '6': give_a_book,
-               '7': receive_a_book,
-               '8': sys.exit}
-while True:
-    view.print_menu()
-    choise = input()
-    if choise in action_dict:
-        action_dict[choise]()
-        view.print_press_enter()
-        input()
-    else:
-        view.print_wrong_number()
-        view.print_press_enter()
-        input()
+
+if __name__ == '__main__':
+    action_dict = {'1': show_all_users,
+                   '2': show_all_books,
+                   '3': show_users_with_books,
+                   '4': show_users_with_overdue_books,
+                   '5': show_availiable_books,
+                   '6': give_a_book,
+                   '7': receive_a_book,
+                   '8': exit_program}
+    while True:
+        view.print_menu()
+        choise = input()
+        if choise in action_dict:
+            action_dict[choise]()
+            view.print_press_enter()
+            input()
+        else:
+            view.print_wrong_number()
+            view.print_press_enter()
+            input()
