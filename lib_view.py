@@ -75,7 +75,7 @@ def print_users_with_books(users_with_books, all_users):
 
 def print_users_with_overdue_books(list_of_user_id, all_users):
     list_of_user_id.sort(key=int)
-    print('\n\rList of all users:')
+    print('\n\rList of users with overdue books:')
     print('{0:>3}{3}{1:15}{3}{2:15}{3}'.format('ID', 'First name', 'Last name', ' | '))
     print('-' * 41)
     for user_id in list_of_user_id:
@@ -92,6 +92,12 @@ def print_wrong_number():
 
 def print_record_was_done():
     print('Information was recorded successfully')
+
+def print_user_has_no_books():
+    print('This user has no books')
+
+def print_user_has_not_this_books():
+    print('User do not have this book')
 
 
 def input_user_id():

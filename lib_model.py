@@ -29,7 +29,16 @@ def write_changed_data():
 def is_user_in_list(user_id):
     if user_id in all_users:
         return True
-    return False
+
+
+def has_user_a_book(user_id):
+    if user_id in users_with_books:
+        return True
+
+
+def has_user_particular_book(user_id, book_id):
+    if book_id in users_with_books[user_id]:
+        return True
 
 
 def has_user_enough_books(user_id):
@@ -66,7 +75,7 @@ def is_book_available(book_id):
 
 
 def give_book(user_id, book_id):
-    date_to_return =str( datetime.today().date() + timedelta(days=DAYS_TO_RETURN_BOOK))
+    date_to_return = str(datetime.today().date() + timedelta(days=DAYS_TO_RETURN_BOOK))
     if user_id in users_with_books:
         users_with_books[user_id][book_id] = date_to_return
     else:
@@ -79,7 +88,7 @@ def give_book(user_id, book_id):
 def receive_book(user_id, book_id):
     users_with_books[user_id].pop(book_id)
     available_books.append(book_id)
-    if len(users_with_books[user_id])==0:
+    if len(users_with_books[user_id]) == 0:
         users_with_books.pop(user_id)
 
 
@@ -87,4 +96,3 @@ all_users = load_data_from_json(ALL_USERS_FILE_PATH)
 all_books = load_data_from_json(ALL_BOOKS_FILE_PATH)
 available_books = load_data_from_json(AVAILABLE_BOOKS_FILE_PATH)
 users_with_books = load_data_from_json(USERS_WITH_BOOKS_FILE_PATH)
-

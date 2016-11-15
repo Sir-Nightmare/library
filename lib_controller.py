@@ -45,7 +45,7 @@ def give_a_book():
     if not model.is_book_available(book_id):
         view.print_book_is_unavailable()
         return
-    model.give_book(user_id,book_id)
+    model.give_book(user_id, book_id)
     view.print_record_was_done()
 
 
@@ -54,9 +54,15 @@ def receive_a_book():
     if not model.is_user_in_list(user_id):
         view.print_no_such_user()
         return
+    if not model.has_user_a_book(user_id):
+        view.print_user_has_no_books()
+        return
     book_id = view.input_book_id()
     if not model.is_book_in_library(book_id):
         view.print_no_such_book()
+        return
+    if not model.has_user_particular_book(user_id, book_id):
+        view.print_user_has_not_this_books()
         return
     model.receive_book(user_id, book_id)
     view.print_record_was_done()
