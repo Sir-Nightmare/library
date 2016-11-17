@@ -103,8 +103,8 @@ def print_user_has_no_books():
     print('This user has no books')
 
 
-def print_user_has_not_this_books():
-    print('User do not have this book')
+def print_user_does_not_have_this_books():
+    print('User does not have this book')
 
 
 def input_user_id():

@@ -84,7 +84,7 @@ def receive_a_book(all_data):
         view.print_no_such_book()
         return
     if not model.has_user_particular_book(user_id, book_id, all_data[3]):
-        view.print_user_has_not_this_books()
+        view.print_user_does_not_have_this_books()
         return
     model.receive_book(user_id, book_id, all_data[2], all_data[3])
     view.print_record_was_done()
