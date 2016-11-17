@@ -69,8 +69,8 @@ def print_users_with_books(users_with_books, all_users):
     for user_id in list_of_user_id:
         print(
             '{0:>3}{4}{1:15}{4}{2:15}{4}{3:^5}{4}'.format(user_id, all_users[user_id]['first_name'],
-                                                         all_users[user_id]['last_name'],
-                                                         len(users_with_books[user_id]), ' | '))
+                                                          all_users[user_id]['last_name'],
+                                                          len(users_with_books[user_id]), ' | '))
 
 
 def print_users_with_overdue_books(list_of_user_id, all_users):
@@ -82,19 +82,26 @@ def print_users_with_overdue_books(list_of_user_id, all_users):
         print('{0:>3}{3}{1:15}{3}{2:15}{3}'.format(user_id, all_users[user_id]['first_name'],
                                                    all_users[user_id]['last_name'], ' | '))
 
+
 def print_press_enter():
     print('\n\rpress Enter to show options')
 
 
-def print_wrong_number():
+def print_wrong_option_number():
     print('There is no such number. Please input a number from 1 to 8')
+
+
+def print_wrong_source_number():
+    print('There is no such number. Please input a number from 1 to 3')
 
 
 def print_record_was_done():
     print('Information was recorded successfully')
 
+
 def print_user_has_no_books():
     print('This user has no books')
+
 
 def print_user_has_not_this_books():
     print('User do not have this book')
@@ -110,3 +117,11 @@ def input_book_id():
 
 def input_option_number():
     return input('Input option number [1-8]:\n\r')
+
+
+def input_source_type():
+    print('Sources:\n\r',
+          '1. First source\n\r',
+          '2. Second source\n\r',
+          '3. Third source\n\r')
+    return input('Input source number [1-3]:\n\r')

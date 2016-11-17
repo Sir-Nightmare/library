@@ -20,4 +20,8 @@ While the program is working info is stored im RAM and when the program exits co
 You will need all files from this repository to run the program. You will also need **Python 3**.    
 You can launch the program by running `lib_controller.py`
  
- 
+ **UPDATE:** Choosing a source was added.  
+` All functions for loading and writing data are equal now. 
+But each of them can be changed inside (loading from url, another file type etc.)
+and interface will not change.
+Only DATA_ADDRESSES in lib_controller.py will have to be changed.`

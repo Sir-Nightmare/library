@@ -1,0 +1,102 @@
+{
+    "1": {
+        "first_name": "Чингиз",
+        "last_name": "Абдуллаев"
+    },
+    "2": {
+        "first_name": "Сергей",
+        "last_name": "Абрамов"
+    },
+    "3": {
+        "first_name": "Алексей",
+        "last_name": "Автократов"
+    },
+    "4": {
+        "first_name": "Даймен",
+        "last_name": "Адам"
+    },
+    "5": {
+        "first_name": "Аркадий",
+        "last_name": "Адамов"
+    },
+    "6": {
+        "first_name": "Сэмуэл",
+        "last_name": "Адамс"
+    },
+    "7": {
+        "first_name": "Петер",
+        "last_name": "Аддамс"
+    },
+    "8": {
+        "first_name": "Айзек",
+        "last_name": "Азимов"
+    },
+    "9": {
+        "first_name": "Уильям",
+        "last_name": "Айриш"
+    },
+    "10": {
+        "first_name": "Эдвард",
+        "last_name": "Айронс"
+    },
+    "11": {
+        "first_name": "Борис",
+        "last_name": "Акунин"
+    },
+    "12": {
+        "first_name": "Эдгар",
+        "last_name": "Алан"
+    },
+    "13": {
+        "first_name": "Гарри",
+        "last_name": "Алекзандер"
+    },
+    "14": {
+        "first_name": "Наталья",
+        "last_name": "Александрова"
+    },
+    "15": {
+        "first_name": "Валерий",
+        "last_name": "Алексеев"
+    },
+    "16": {
+        "first_name": "Норк",
+        "last_name": "Алекс"
+    },
+    "17": {
+        "first_name": "Периссинотто",
+        "last_name": "Алессандро"
+    },
+    "18": {
+        "first_name": "Светлана",
+        "last_name": "Алешина"
+    },
+    "19": {
+        "first_name": "Стив",
+        "last_name": "Аллен"
+    },
+    "20": {
+        "first_name": "Марджери",
+        "last_name": "Аллингхэм"
+    },
+    "21": {
+        "first_name": "Сергей",
+        "last_name": "Алтынов"
+    },
+    "22": {
+        "first_name": "Питер",
+        "last_name": "Альбано"
+    },
+    "23": {
+        "first_name": "Ральф",
+        "last_name": "Альбертацци"
+    },
+    "24": {
+        "first_name": "Эрик",
+        "last_name": "Амблер"
+    },
+    "25": {
+        "first_name": "Джамшид",
+        "last_name": "Амиров"
+    }
+}
